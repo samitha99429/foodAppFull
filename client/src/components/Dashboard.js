@@ -15,7 +15,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get('https://food-app-server-16prr7s2q-samithas-projects-66fa87b4.vercel.app/api/recipes/categories');
+        const { data } = await axios.get('https://foo-recipe-api.onrender.com/api/recipes/categories');
         setCategories(data.slice(0, 5)); 
       } catch (error) {
         console.error("Failed to fetch categories:", error);

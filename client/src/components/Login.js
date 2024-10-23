@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://food-app-server-16prr7s2q-samithas-projects-66fa87b4.vercel.app/api/auth/login', { email, password });
+      const response = await axios.post('https://foo-recipe-api.onrender.com/api/auth/login', { email, password });
       localStorage.setItem('token', response.data.token);
       console.log(response.data.token);
       window.location.reload('/homepage');

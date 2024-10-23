@@ -10,7 +10,7 @@ const Favorites = () => {
   useEffect(() => {
     const fetchFavorites = async () => {
       const token = localStorage.getItem('token');
-      const { data } = await axios.get('https://food-app-server-16prr7s2q-samithas-projects-66fa87b4.vercel.app/api/recipes/favorites', {
+      const { data } = await axios.get('https://foo-recipe-api.onrender.com/api/recipes/favorites', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setFavorites(data); 
