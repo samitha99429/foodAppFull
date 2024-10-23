@@ -32,7 +32,7 @@ const Favorites = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3001/api/recipes/favorites/${idMeal}`, {
+          await axios.delete(`https://foo-recipe-api.onrender.com/api/recipes/favorites/${idMeal}`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           setFavorites(favorites.filter(fav => fav.idMeal !== idMeal));
