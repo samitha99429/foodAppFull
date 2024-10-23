@@ -14,9 +14,11 @@ const app = express();
 app.use(cors(
   {
     origin: 'https://food-app-client-neon.vercel.app/',
+
     credentials: true,
   },
 ));
+
 app.use(express.json());
 
 
