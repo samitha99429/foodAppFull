@@ -36,7 +36,7 @@ const Register = () => {
     setErrorMessage('');
 
     try {
-      await axios.post('http://localhost:3001/api/auth/register', { firstname, lastname, email, phonenumber, password });
+      await axios.post('https://food-app-server-16prr7s2q-samithas-projects-66fa87b4.vercel.app/api/auth/register', { firstname, lastname, email, phonenumber, password });
       navigate('/login');
     } catch (err) {
       console.error(err);
