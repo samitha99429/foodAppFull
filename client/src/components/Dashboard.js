@@ -29,7 +29,7 @@ const Dashboard = () => {
     if (selectedCategory) {
       const fetchRecipes = async () => {
         try {
-          const { data } = await axios.get(`http://localhost:3001/api/recipes/category/${selectedCategory}`);
+          const { data } = await axios.get(`https://foo-recipe-api.onrender.com/api/recipes/category/${selectedCategory}`);
           setRecipes(data); 
           
         } catch (error) {
@@ -62,7 +62,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchFavorites = async () => {
       const token = localStorage.getItem('token');
-      const { data } = await axios.get('http://localhost:3001/api/recipes/favorites', {
+      const { data } = await axios.get('https://foo-recipe-api.onrender.com/api/recipes/favorites', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setFavorites(data);
@@ -83,13 +83,13 @@ const Dashboard = () => {
     const isFavorite = favorites.some(fav => fav.idMeal === recipe.idMeal);
 
     if (isFavorite) {
-      await axios.delete(`http://localhost:3001/api/recipes/favorites/${recipe.idMeal}`, {
+      await axios.delete(`https://foo-recipe-api.onrender.com/api/recipes/favorites/${recipe.idMeal}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setFavorites(favorites.filter(fav => fav.idMeal !== recipe.idMeal));
       console.log('Removed from favorites:', recipe.strMeal);
       } else {
-        await axios.post('http://localhost:3001/api/recipes/favorites', {
+        await axios.post('https://foo-recipe-api.onrender.com/api/recipes/favorites', {
           idMeal: recipe.idMeal,
           strMeal: recipe.strMeal,
           strMealThumb: recipe.strMealThumb,
