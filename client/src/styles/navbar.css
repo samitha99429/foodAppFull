@@ -1,0 +1,50 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff6f6;
+    border-bottom: 1px solid #f2e0e0;
+  }
+  
+  .navbarlogo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logotext {
+    color: #f75e82; 
+  }
+  
+ 
+  
+  .navbar-links {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-link:hover {
+    color: #f75e82; 
+  }
+  
+  .navbar-logout {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .logout-icon {
+    color: #333; 
+  }
+  
+  .logout-icon:hover {
+    color: #f75e82;
+  }
+  
