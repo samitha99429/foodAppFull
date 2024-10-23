@@ -37,6 +37,7 @@ const Favorites = () => {
           });
           setFavorites(favorites.filter(fav => fav.idMeal !== idMeal));
           Swal.fire('Removed!', 'The recipe has been removed from favorites.', 'success');
+          window.location.reload();
           
         } catch (error) {
           console.error('Failed to remove favorite:', error);
