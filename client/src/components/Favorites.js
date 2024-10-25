@@ -50,7 +50,7 @@ const Favorites = () => {
   };
 
 
-  const removeall = (idMeal) =>{
+  const removeall = () =>{
 
     const token = localStorage.getItem('token');
     Swal.fire({
