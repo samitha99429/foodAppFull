@@ -50,40 +50,15 @@ const Favorites = () => {
   };
 
 
-  const removeall = () =>{
-
-    const token = localStorage.getItem('token');
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "Do you really want to remove all recipes from favorites?",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, remove all!',
-      cancelButtonText: 'No, cancel!',
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        try {
-          await axios.delete(`https://foo-recipe-api.onrender.com/api/recipes/favorites`, {
-            headers: { Authorization: `Bearer ${token}` }
-          });
-          setFavorites([]);
-          Swal.fire('Removed!', 'All recipes have been removed from favorites.', 'success');
-          window.location.reload();
-        } catch (error) {
-          console.error('Failed to remove favorites:', error);
-          Swal.fire('Error!', 'Failed to remove all recipes. Try again later.', 'error');
-        }
-      }
-    });
+ 
 
 
   
 
-  }
+  
   return (
     <>
     <h2 className='mt-2 '>Favorites</h2>
-    <button className='remove-button' onClick={removeall}>Remove All</button>
     <div className="favGrid">
       {favorites.map((recipe) => (
         <div key={recipe.idMeal} className="fav-card">
