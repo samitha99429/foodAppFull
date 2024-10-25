@@ -45,6 +45,8 @@ const Dashboard = () => {
     setSelectedCategory(category);
   };
 
+
+
   const handleRecipeClick = (recipe) => {
     console.log("Recipe clicked:", recipe);  
     setSelectedRecipe(recipe);
